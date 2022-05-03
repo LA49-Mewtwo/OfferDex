@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import MainContainer from './containers/MainContainer.jsx';
-
+import MainContainer from "./containers/MainContainer.jsx";
+import "../dist/output.css";
 /**
  * ************************************
  *
@@ -18,10 +18,9 @@ class App extends Component {
   }
 
   render() {
-    return(
+    return (
       <div>
-        {/* <MainContainer/> */}
-        Hello!
+        <MainContainer />
       </div>
     );
   }

@@ -7,7 +7,8 @@
     "webpack_test": "export NODE_ENV=development; webpack serve --open",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server/server.js",
-    "dev": "concurrently \"export NODE_ENV=development; webpack serve\" \"nodemon ./server/server.js\""
+    "tailwind": "npx tailwindcss -i ./client/input.css -o ./dist/output.css --watch",
+    "dev": "concurrently \"cross-env NODE_ENV=development webpack-dev-server --open --hot --progress --color \" \"nodemon ./server/server.js\" \"npm run tailwind\""
   },
   "repository": {
     "type": "git",
@@ -31,11 +32,14 @@
     "file-loader": "^6.2.0",
     "sass-loader": "^12.6.0",
     "style-loader": "^3.3.1",
+    "tailwindcss": "^3.0.24",
     "webpack": "^5.72.0",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.8.1"
   },
   "dependencies": {
+    "@headlessui/react": "^1.6.0",
+    "@heroicons/react": "^1.0.6",
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
