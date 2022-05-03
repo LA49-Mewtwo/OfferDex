@@ -11,16 +11,34 @@
 import * as types from "../constants/actionTypes";
 
 const initialState = {
-  default: 123,
+  username: "",
+  offerBoard: [],
+  interviewBoard: [],
+  currentlyOn: "",
 };
 
 const offerDexReducer = (state = initialState, action) => {
   switch (action.type) {
-    case types.SAMPLE_ACTION: {
-      const state = JSON.parse(JSON.stringify(state));
-      return {
-        ...state,
-      };
+    case types.DISPLAY_OFFER: {
+      // const newState = JSON.parse(JSON.stringify(state));
+      const newState = structuredClone(state);
+      newState.currentlyOn = "offer";
+      return newState;
+    }
+    case types.DISPLAY_INTERVIEW: {
+      const newState = structuredClone(state);
+      newState.currentlyOn = "interview";
+      return newState;
+    }
+    case types.ADD_OFFER: {
+      const newState = JSON.parse(JSON.stringify(state));
+      newState.offerBoard.push(action.payload);
+      return newState;
+    }
+    case types.ADD_INTERVIEW: {
+      const newState = structuredClone(state);
+      newState.interviewBoard.push(action.payload);
+      return newState;
     }
     default: {
       return state;

@@ -8,7 +8,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Navbar() {
+export default function Navbar(props) {
   return (
     <Disclosure as="nav" className="bg-white shadow">
       {({ open }) => (
@@ -30,7 +30,7 @@ export default function Navbar() {
                 <div className="flex-shrink-0 flex items-center">
                   <img
                     className="block lg:hidden h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                    src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/150.png"
                     alt="Workflow"
                   />
                   <img
@@ -43,17 +43,23 @@ export default function Navbar() {
                   {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
                   <a
                     href="#"
+                    onClick={() => {
+                      props.displayOffer();
+                    }}
                     className="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
                   >
-                    Dashboard
+                    Offers
                   </a>
                   <a
                     href="#"
+                    onClick={() => {
+                      props.displayInterview();
+                    }}
                     className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
                   >
-                    Team
+                    Interviews
                   </a>
-                  <a
+                  {/* <a
                     href="#"
                     className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
                   >
@@ -64,7 +70,7 @@ export default function Navbar() {
                     className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
                   >
                     Calendar
-                  </a>
+                  </a> */}
                 </div>
               </div>
               <div className="flex items-center">

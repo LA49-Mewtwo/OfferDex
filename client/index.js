@@ -19,7 +19,6 @@ function AppRouter() {
 
 ReactDOM.render(
   <Provider store={store}>
-    <p>Hello, World!</p>
     <AppRouter />
   </Provider>,
   document.getElementById("root")
