@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import "../input.css";
 import Navbar from "../components/Navbar";
 import * as actions from "../actions/actions";
 
-import Interview from "../components/Interview";
+import InterviewContainer from "./InterviewContainer";
+import OfferContainer from "./OfferContainer";
 import Offer from "../components/Offer";
+import Interview from "../components/Interview";
+import AddOffer from "../components/AddOffer";
 
 const mapStateToProps = (state) => ({
   // add state here
@@ -35,19 +37,32 @@ class MainContainer extends Component {
           <Navbar
             displayInterview={this.props.displayInterview}
             displayOffer={this.props.displayOffer}
+            currentlyOn={this.props.currentlyOn}
           />
           <Offer />
         </>
       );
-    return (
-      <>
-        <Navbar
-          displayInterview={this.props.displayInterview}
-          displayOffer={this.props.displayOffer}
-        />
-        <Interview />
-      </>
-    );
+    else if (this.props.currentlyOn == "interview") {
+      return (
+        <>
+          <Navbar
+            displayInterview={this.props.displayInterview}
+            displayOffer={this.props.displayOffer}
+            currentlyOn={this.props.currentlyOn}
+          />
+          <AddOffer />
+        </>
+      );
+    } else
+      return (
+        <>
+          <Navbar
+            displayInterview={this.props.displayInterview}
+            displayOffer={this.props.displayOffer}
+            currentlyOn={this.props.currentlyOn}
+          />
+        </>
+      );
   }
 }
 

@@ -12,8 +12,8 @@ import * as types from "../constants/actionTypes";
 
 const initialState = {
   username: "",
-  offerBoard: [],
-  interviewBoard: [],
+  offerBoard: [1, 2, 3, 4],
+  interviewBoard: [1, 2, 3, 4, 5, 6],
   currentlyOn: "",
 };
 

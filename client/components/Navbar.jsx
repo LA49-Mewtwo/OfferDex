@@ -9,6 +9,10 @@ function classNames(...classes) {
 }
 
 export default function Navbar(props) {
+  const defaultClass =
+    "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium";
+  const currentClass =
+    "border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium";
   return (
     <Disclosure as="nav" className="bg-white shadow">
       {({ open }) => (
@@ -46,7 +50,9 @@ export default function Navbar(props) {
                     onClick={() => {
                       props.displayOffer();
                     }}
-                    className="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                    className={
+                      props.currentlyOn == "offer" ? currentClass : defaultClass
+                    }
                   >
                     Offers
                   </a>
@@ -55,7 +61,11 @@ export default function Navbar(props) {
                     onClick={() => {
                       props.displayInterview();
                     }}
-                    className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                    className={
+                      props.currentlyOn == "interview"
+                        ? currentClass
+                        : defaultClass
+                    }
                   >
                     Interviews
                   </a>
