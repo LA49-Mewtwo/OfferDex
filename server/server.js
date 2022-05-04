@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("path");
 const userRouter = require('./routers/userRouter')
 const offerRouter = require('./routers/offerRouter')
+const interviewRouter = require('./routers/interviewRouter')
 const companyInfoRouter = require('./routers/companyInfoRouter')
 const PORT = 3000;
 
@@ -24,6 +25,8 @@ app.use(express.static(path.resolve(__dirname, "../")));
 app.use('/users', userRouter);
 
 app.use('/offers', offerRouter);
+
+app.use('/interviews', interviewRouter);
 
 app.use('/companyInfo', companyInfoRouter);
 
