@@ -50,7 +50,7 @@ export default function AddOffer(props) {
 
   if (!props.popupAddOffer) return null;
   return (
-    <div className=" z-[99] bg-gray-200 h-screen">
+    <div className="fixed z-[99] bg-gray-200 h-screen">
       <form onSubmit={handler} className="space-y-8 divide-y divide-gray-200">
         <div className=" space-y-8 divide-y divide-gray-200 sm:space-y-5">
           <div className="pt-8 space-y-6 sm:pt-10 sm:space-y-5">
