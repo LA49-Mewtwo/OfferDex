@@ -21,11 +21,10 @@ export default function AddOffer(props) {
         first_name: e.target.first_name.value,
         last_name: e.target.last_name.value,
         company_name: e.target.company_name.value,
-        department_name: e.target.department_name.value,
         position_name: e.target.position_name.value,
-        position_level: e.target.position_level.value,
-        amount: e.target.amount.value,
-        date: e.target.date.value,
+        position_level: e.target.date.value,
+        amount: e.target.questions.value,
+        date: e.target.answers.value,
         notes: e.target.notes.value,
       };
       const port = 3000; // process.env.NODE_ENV === 'development' ? 3000 : 8080;
@@ -147,7 +146,7 @@ export default function AddOffer(props) {
                       type="date"
                       name="date"
                       id="date"
-                      autoComplete="address-level2"
+                      autoComplete="date"
                       className="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
                     />
                   </div>
@@ -155,17 +154,17 @@ export default function AddOffer(props) {
   
                 <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
                   <label
-                    htmlFor="amount"
+                    htmlFor="questions"
                     className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
                   >
                     Questions Asked
                   </label>
                   <div className="mt-1 sm:mt-0 sm:col-span-2">
                     <input
-                      type="number"
-                      name="amount"
-                      id="amount"
-                      autoComplete="address-level1"
+                      type="text"
+                      name="questions"
+                      id="questions"
+                      autoComplete="questions"
                       className="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
                     />
                   </div>
@@ -173,17 +172,17 @@ export default function AddOffer(props) {
   
                 <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
                   <label
-                    htmlFor="date"
+                    htmlFor="answers"
                     className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
                   >
                     Answers
                   </label>
                   <div className="mt-1 sm:mt-0 sm:col-span-2">
                     <input
-                      type="date"
-                      name="date"
-                      id="date"
-                      autoComplete="date"
+                      type="text"
+                      name="answers"
+                      id="answers"
+                      autoComplete="answers"
                       className="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
                     />
                   </div>
