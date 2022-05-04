@@ -23,20 +23,22 @@ class OfferContainer extends Component {
   }
 
   render() {
-    const offerTable = (
-      <Offer
-        offerDetails={this.props.offerBoard}
-        addOfferSwitch={this.props.AddOfferSwitch}
-      />
-    );
-    if (!this.props.popupAddOffer) return <>{offerTable}</>;
-    else
-      return (
+    return (
+      <>
+        <div className="flex justify-center items-center ">
+          <AddOffer
+            popupAddOffer={this.props.popupAddOffer}
+            addOfferSwitch={this.props.AddOfferSwitch}
+          />
+        </div>
         <>
-          <AddOffer addOfferSwitch={this.props.AddOfferSwitch} />
-          {offerTable}
+          <Offer
+            offerDetails={this.props.offerBoard}
+            addOfferSwitch={this.props.AddOfferSwitch}
+          />
         </>
-      );
+      </>
+    );
   }
 }
 

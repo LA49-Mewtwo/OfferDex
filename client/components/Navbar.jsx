@@ -85,7 +85,7 @@ export default function Navbar(props) {
               </div>
               <div className="flex items-center">
                 <div className="flex-shrink-0">
-                  <button
+                  {/* <button
                     type="button"
                     className="relative inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                   >
@@ -94,7 +94,7 @@ export default function Navbar(props) {
                       aria-hidden="true"
                     />
                     <span>New Job</span>
-                  </button>
+                  </button> */}
                 </div>
                 <div className="hidden md:ml-4 md:flex-shrink-0 md:flex md:items-center">
                   <button
