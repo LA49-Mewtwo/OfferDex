@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("path");
 const userRouter = require('./routers/userRouter')
 const offerRouter = require('./routers/offerRouter')
+const companyInfoRouter = require('./routers/companyInfoRouter')
 const PORT = 3000;
 
 const app = express();
@@ -22,7 +23,9 @@ app.use(express.static(path.resolve(__dirname, "../")));
 
 app.use('/users', userRouter);
 
-// app.use('/offers', offerRouter);
+app.use('/offers', offerRouter);
+
+app.use('/companyInfo', companyInfoRouter);
 
 //catch-all route error handler
 app.use((req, res) => {
@@ -37,6 +40,7 @@ app.use((err, req, res, next) => {
     message: { err: "Express error handler caught UNKNOWN middleware error" },
   };
   const errorObj = Object.assign(defaultErr, err);
+  console.log(errorObj.log);
   return res.status(errorObj.status).json(errorObj.message);
 });
 

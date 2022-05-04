@@ -9,20 +9,20 @@ userController.signup = async (req, res, next) => {
   const encryptedPassword = await bcrypt.hash(password, saltRounds);
   try {
     const queryString =
-    `
+      `
     INSERT INTO users ( username, password, first_name, last_name, cohort_location, cohort, created_at )
     VALUES ($1, $2, $3, $4, $5, $6, $7) 
     RETURNING *;
     `;
-    const params = [ username, encryptedPassword, first_name, last_name, cohort_location, cohort, new Date(Date.now()) ];
+    const params = [username, encryptedPassword, first_name, last_name, cohort_location, cohort, new Date(Date.now())];
     const result = await db.query(queryString, params);
     res.locals.newUser = result.rows[0];
-    next ();
+    next();
   }
   catch (err) {
     next({
       log: `userController.signup ERROR: ${err}`,
-      message: { err: 'Error occured in userController.signup'}
+      message: { err: 'Error occured in userController.signup' }
     })
   }
 }
@@ -31,13 +31,13 @@ userController.verifyUser = async (req, res, next) => {
   const { username, password } = req.body;
   try {
     const queryString =
-    `
+      `
     SELECT 
     username, password, first_name, last_name, cohort_location, cohort
     FROM users
     WHERE username = $1;
     `;
-    const params = [ username ];
+    const params = [username];
     const result = await db.query(queryString, params);
     // console.log('Result: ', result);
     // compare the hashed password stored in the database and our plainTextPassword
@@ -57,8 +57,8 @@ userController.verifyUser = async (req, res, next) => {
   catch (err) {
     next({
       log: `userController.verifyUser  ERROR: ${err}`,
-      message: { err: 'Error occured in userController.verifyUser'}
-  })
+      message: { err: 'Error occured in userController.verifyUser' }
+    })
   }
 }
 

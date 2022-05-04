@@ -2,6 +2,8 @@ CREATE TABLE users (
 	id serial,
 	username varchar(32) NOT NULL UNIQUE,
 	password varchar(64) NOT NULL,
+  first_name varchar(32) NOT NULL,
+  last_name varchar(32) NOT NULL,
 	created_at TIMESTAMP,
 	cohort_location varchar(16) NOT NULL,
 	cohort integer NOT NULL,
@@ -14,6 +16,7 @@ CREATE TABLE users (
 
 CREATE TABLE offers (
 	id serial,
+	date DATE,
 	user_id integer NOT NULL,
 	company_id integer NOT NULL,
 	department_id integer,
