@@ -1,18 +1,29 @@
 const express = require("express");
 const path = require("path");
-const userRouter = require('./routers/userRouter')
-const offerRouter = require('./routers/offerRouter')
-const interviewRouter = require('./routers/interviewRouter')
-const companyInfoRouter = require('./routers/companyInfoRouter')
+const cors = require("cors");
+const userRouter = require("./routers/userRouter");
+const offerRouter = require("./routers/offerRouter");
+const interviewRouter = require("./routers/interviewRouter");
+const companyInfoRouter = require("./routers/companyInfoRouter");
 const PORT = 3000;
 
 const app = express();
+
+// use CORS
+app.use(cors({ credentials: true, origin: "http://localhost:8080" }));
 
 // convert json body
 app.use(express.json());
 
 // serve static routes
-app.use(express.static(path.resolve(__dirname, "../")));
+app.use(express.static(path.resolve(__dirname, "../dist")));
+
+// //serve index.html to /
+//  app.get("/", (req, res) => {
+//   res.status(200).sendFile(path.join(__dirname, "../dist/index.html"));
+//  });
+
+
 
 //serve index.html to /
 // app.get("/", (req, res) => {
@@ -22,13 +33,13 @@ app.use(express.static(path.resolve(__dirname, "../")));
 // Proxied endpoints from webpack frontend:
 // "/users", "/offers"
 
-app.use('/users', userRouter);
+app.use("/users", userRouter);
 
-app.use('/offers', offerRouter);
+app.use("/offers", offerRouter);
 
-app.use('/interviews', interviewRouter);
+app.use("/interviews", interviewRouter);
 
-app.use('/companyInfo', companyInfoRouter);
+app.use("/companyInfo", companyInfoRouter);
 
 //catch-all route error handler
 app.use((req, res) => {

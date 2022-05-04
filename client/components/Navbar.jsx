@@ -112,7 +112,7 @@ export default function Navbar(props) {
                         <span className="sr-only">Open user menu</span>
                         <img
                           className="h-8 w-8 rounded-full"
-                          src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzhB4laqdHDPwv4XrVq3Ji_zKEDArUWNB76PEAd4tDh96l2iyIaHs2zA9B0L0-vfPoDK0&usqp=CAU"
                           alt=""
                         />
                       </Menu.Button>

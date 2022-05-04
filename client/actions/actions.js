@@ -42,3 +42,8 @@ export const addOfferSwitchCreator = (show) => ({
   type: types.ADD_OFFER_SWITCH,
   payload: show,
 });
+
+export const addInterviewSwitchCreator = (show) => ({
+  type: types.ADD_INTERVIEW_SWITCH,
+  payload: show,
+});

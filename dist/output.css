@@ -1016,6 +1016,16 @@ select {
   background-color: rgb(238 242 255 / var(--tw-bg-opacity));
 }
 
+.bg-fuchsia-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(250 232 255 / var(--tw-bg-opacity));
+}
+
+.bg-fuchsia-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(253 244 255 / var(--tw-bg-opacity));
+}
+
 .p-7 {
   padding: 1.75rem;
 }
@@ -1275,6 +1285,11 @@ select {
 .hover\:bg-gray-100:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-fuchsia-100:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(250 232 255 / var(--tw-bg-opacity));
 }
 
 .hover\:text-indigo-900:hover {

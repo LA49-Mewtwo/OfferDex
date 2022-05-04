@@ -59,7 +59,7 @@ export default function AddOffer(props) {
                 Personal Information
               </h3>
               <p className="mt-1 max-w-2xl text-sm text-gray-500">
-                Yankun = Mewtwo. David = cyborg. Trey = master. Erica = Erica.
+                Yankun = Mewtwo. David = cyborg. Trey = master. Erica = ninja.
               </p>
             </div>
             <div className="space-y-6 sm:space-y-5">
