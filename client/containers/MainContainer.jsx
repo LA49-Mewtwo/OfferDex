@@ -55,7 +55,7 @@ class MainContainer extends Component {
             displayOffer={this.props.displayOffer}
             currentlyOn={this.props.currentlyOn}
           />
-          <Interview />
+          <InterviewContainer />
         </>
       );
     } else

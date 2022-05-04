@@ -16,14 +16,15 @@ const initialState = {
   interviewBoard: [1, 2, 3, 4, 5, 6],
   currentlyOn: "",
   popupAddOffer: false,
+  popupAddInterview: false,
 };
 
 const offerDexReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.DISPLAY_OFFER: {
-      const newState = structuredClone(state);
+      const newState = JSON.parse(JSON.stringify(state));
       const port = 3000;
-      const url = `http://localhost:${port}/getOffers`;
+      const url = `http://localhost:${port}/offers/getOffers`;
       let fetchStatus;
       fetch(url, {
         method: "GET",
@@ -33,15 +34,16 @@ const offerDexReducer = (state = initialState, action) => {
         },
       }).then((response) => {
         fetchStatus = response.status;
+        console.log(response.json());
         newState.offerBoard = response.json();
+        newState.currentlyOn = "offer";
+        return newState;
       });
-      newState.currentlyOn = "offer";
-      return newState;
     }
     case types.DISPLAY_INTERVIEW: {
-      const newState = structuredClone(state);
+      const newState = JSON.parse(JSON.stringify(state));
       const port = 3000;
-      const url = `http://localhost:${port}/getInterviews`;
+      const url = `http://localhost:${port}/interviews/getInterviews`;
       let fetchStatus;
       fetch(url, {
         method: "GET",
@@ -72,13 +74,18 @@ const offerDexReducer = (state = initialState, action) => {
       return newState;
     }
     case types.ADD_INTERVIEW: {
-      const newState = structuredClone(state);
+      const newState = JSON.parse(JSON.stringify(state));
       newState.interviewBoard.push(action.payload);
       return newState;
     }
     case types.ADD_OFFER_SWITCH: {
-      const newState = structuredClone(state);
+      const newState = JSON.parse(JSON.stringify(state));
       newState.popupAddOffer = action.payload;
+      return newState;
+    }
+    case types.ADD_INTERVIEW_SWITCH: {
+      const newState = JSON.parse(JSON.stringify(state));
+      newState.popupAddInterview = action.payload;
       return newState;
     }
     default: {

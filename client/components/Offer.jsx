@@ -12,20 +12,21 @@ import { ChevronDownIcon } from "@heroicons/react/solid";
 // ];
 
 export default function Offer(props) {
-  const people = [
-    {
-      first_name: "Yankun",
-      last_name: "Song",
-      company_name: "PokeDex",
-      department_name: "AWS",
-      position_name: "Mewtwo",
-      position_level: "II",
-      amount: "two million",
-      date: "twomorrow",
-      notes: "notes",
-    },
-    // More people...
-  ];
+  // const people = [
+  //   {
+  //     first_name: "Yankun",
+  //     last_name: "Song",
+  //     company_name: "PokeDex",
+  //     department_name: "AWS",
+  //     position_name: "Mewtwo",
+  //     position_level: "II",
+  //     amount: "two million",
+  //     date: "twomorrow",
+  //     notes: "notes",
+  //   },
+  //   // More people...
+  // ];
+  const people = props.offerDetails;
 
   return (
     <div className="px-4 sm:px-6 lg:px-8">
@@ -39,7 +40,7 @@ export default function Offer(props) {
         <div className="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
           <button
             type="button"
-            onClick={()=>props.addOfferSwitch(true)}
+            onClick={() => props.addOfferSwitch(true)}
             className="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto"
           >
             Add offer
@@ -51,7 +52,7 @@ export default function Offer(props) {
           <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
             <div className="overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
               <table className="min-w-full divide-y divide-gray-300">
-                <thead className="bg-gray-50">
+                <thead className="bg-fuchsia-50">
                   <tr>
                     <th
                       scope="col"

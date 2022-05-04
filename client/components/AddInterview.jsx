@@ -14,7 +14,7 @@
   }
   ```
 */
-export default function AddOffer(props) {
+export default function AddInterview(props) {
     const handler = (e) => {
       e.preventDefault();
       const reqBody = {
@@ -22,9 +22,9 @@ export default function AddOffer(props) {
         last_name: e.target.last_name.value,
         company_name: e.target.company_name.value,
         position_name: e.target.position_name.value,
-        position_level: e.target.date.value,
-        amount: e.target.questions.value,
-        date: e.target.answers.value,
+        date: e.target.date.value,
+        questions: e.target.questions.value,
+        answers: e.target.answers.value,
         notes: e.target.notes.value,
       };
       const port = 3000; // process.env.NODE_ENV === 'development' ? 3000 : 8080;
