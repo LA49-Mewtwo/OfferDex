@@ -39,7 +39,7 @@ export default function Navbar(props) {
                   />
                   <img
                     className="hidden lg:block h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-logo-indigo-600-mark-gray-800-text.svg"
+                    src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/150.png"
                     alt="Workflow"
                   />
                 </div>

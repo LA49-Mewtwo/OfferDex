@@ -20,6 +20,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     displayOffer: () => dispatch(actions.displayOfferCreator()),
     displayInterview: () => dispatch(actions.displayInterviewCreator()),
+    getOffer: () => dispatch(actions.getOfferCreator()),
+    getInterview: () => dispatch(actions.getInterviewCreator()),
     addOffer: (offer) => dispatch(actions.addOfferCreator(offer)),
     addInterview: (interview) =>
       dispatch(actions.addInterviewCreator(interview)),
@@ -30,7 +32,10 @@ class MainContainer extends Component {
   constructor(props) {
     super(props);
   }
+
   render() {
+    // this.props.getOffer();
+    // this.props.getInterview();
     if (this.props.currentlyOn == "offer")
       return (
         <>
@@ -39,7 +44,7 @@ class MainContainer extends Component {
             displayOffer={this.props.displayOffer}
             currentlyOn={this.props.currentlyOn}
           />
-          <Offer />
+          <OfferContainer />
         </>
       );
     else if (this.props.currentlyOn == "interview") {
@@ -50,7 +55,7 @@ class MainContainer extends Component {
             displayOffer={this.props.displayOffer}
             currentlyOn={this.props.currentlyOn}
           />
-          <AddOffer />
+          <Interview />
         </>
       );
     } else

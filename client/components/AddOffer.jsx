@@ -14,7 +14,7 @@
   }
   ```
 */
-export default function AddOffer() {
+export default function AddOffer(props) {
   const handler = (e) => {
     e.preventDefault();
     const reqBody = {
@@ -32,8 +32,7 @@ export default function AddOffer() {
     const url = `http://localhost:${port}/newOffer`;
 
     let fetchStatus;
-    fetch
-      (url, {
+    fetch(url, {
       // <- returns a response asynchronously
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       // mode: 'no-cors',
@@ -43,11 +42,10 @@ export default function AddOffer() {
       },
       // redirect: 'follow', // manual, *follow, error
       body: JSON.stringify(reqBody), // body data type must match "Content-Type" header
-      })
-      .then((response) => {
-        fetchStatus = response.status;
-        return response.json();
-      });
+    }).then((response) => {
+      fetchStatus = response.status;
+      return response.json();
+    });
   };
 
   return (
@@ -232,6 +230,7 @@ export default function AddOffer() {
         <div className="flex justify-end">
           <button
             type="button"
+            onClick={() => props.addOfferSwitch(false)}
             className="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
           >
             Cancel
