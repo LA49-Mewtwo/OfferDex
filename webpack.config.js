@@ -93,7 +93,7 @@ module.exports = {
     proxy: [
       {
         context: ["/users", "/offers", "/interviews", "/companyInfo"],
-        target: "http://localhost:3000",
+        target: "http://www.treyfrog.com:3000",
       },
     ],
   },
