@@ -49,7 +49,7 @@ export default function AddInterview(props) {
   
     if (!props.popupAddInterview) return null;
     return (
-      <div className="fixed z-10 bg-violet-100 h-[75%] w-[50%] mt-[600px] p-7 rounded-xl overflow-auto">
+      <div className="fixed z-10 bg-fuchsia-100 h-[75%] w-[50%] mt-[600px] p-7 rounded-xl overflow-auto">
         <form onSubmit={handler} className="space-y-8 divide-y divide-gray-200">
           <div className=" space-y-8 divide-y divide-gray-200 sm:space-y-5">
             <div className="space-y-6 sm:pt-5 sm:space-y-5">

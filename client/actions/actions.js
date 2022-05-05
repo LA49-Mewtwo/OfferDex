@@ -12,12 +12,14 @@
 // import actionType constants
 import * as types from "../constants/actionTypes";
 
-export const displayOfferCreator = () => ({
+export const displayOfferCreator = (offers) => ({
   type: types.DISPLAY_OFFER,
+  payload: offers,
 });
 
-export const displayInterviewCreator = () => ({
+export const displayInterviewCreator = (interviews) => ({
   type: types.DISPLAY_INTERVIEW,
+  payload: interviews,
 });
 
 export const getOfferCreator = () => ({

@@ -29,7 +29,7 @@ export default function AddOffer(props) {
       notes: e.target.notes.value,
     };
     const port = 3000; // process.env.NODE_ENV === 'development' ? 3000 : 8080;
-    const url = `http://localhost:${port}/newOffer`;
+    const url = `http://localhost:${port}/offers/newOffer`;
 
     let fetchStatus;
     fetch(url, {
@@ -50,7 +50,7 @@ export default function AddOffer(props) {
 
   if (!props.popupAddOffer) return null;
   return (
-    <div className="fixed z-10 bg-violet-100 h-[75%] w-[50%] mt-[600px] p-7 rounded-xl overflow-auto">
+    <div className="fixed z-10 bg-fuchsia-100 h-[75%] w-[50%] mt-[600px] p-7 rounded-xl overflow-auto">
       <form onSubmit={handler} className="space-y-8 divide-y divide-gray-200">
         <div className=" space-y-8 divide-y divide-gray-200 sm:space-y-5">
           <div className="space-y-6 sm:pt-5 sm:space-y-5">

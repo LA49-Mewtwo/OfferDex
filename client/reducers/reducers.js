@@ -22,40 +22,28 @@ const initialState = {
 const offerDexReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.DISPLAY_OFFER: {
-      const newState = JSON.parse(JSON.stringify(state));
-      const port = 3000;
-      const url = `http://localhost:${port}/offers/getOffers`;
-      let fetchStatus;
-      fetch(url, {
-        method: "GET",
-        credentials: "include",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }).then((response) => {
-        fetchStatus = response.status;
-        console.log(response.json());
-        newState.offerBoard = response.json();
-        newState.currentlyOn = "offer";
-        return newState;
-      });
+      // const newState = JSON.parse(JSON.stringify(state));
+      console.log("payload:::", action.payload);
+      const offerBoard = [...action.payload];
+      const currentlyOn = "offer";
+      const newState = {
+        ...state,
+        offerBoard,
+        currentlyOn,
+      };
+      console.log("newState: ", newState);
+      return newState;
     }
     case types.DISPLAY_INTERVIEW: {
-      const newState = JSON.parse(JSON.stringify(state));
-      const port = 3000;
-      const url = `http://localhost:${port}/interviews/getInterviews`;
-      let fetchStatus;
-      fetch(url, {
-        method: "GET",
-        credentials: "include",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }).then((response) => {
-        fetchStatus = response.status;
-        newState.interviewBoard = response.json();
-      });
-      newState.currentlyOn = "interview";
+      console.log("payload:::", action.payload);
+      const interviewBoard = [...action.payload];
+      const currentlyOn = "interview";
+      const newState = {
+        ...state,
+        interviewBoard,
+        currentlyOn,
+      };
+      console.log("newState: ", newState);
       return newState;
     }
     // case types.GET_OFFER: {

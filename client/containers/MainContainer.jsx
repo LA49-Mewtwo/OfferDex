@@ -18,8 +18,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    displayOffer: () => dispatch(actions.displayOfferCreator()),
-    displayInterview: () => dispatch(actions.displayInterviewCreator()),
+    displayOffer: (offers) => dispatch(actions.displayOfferCreator(offers)),
+    displayInterview: (interviews) => dispatch(actions.displayInterviewCreator(interviews)),
     getOffer: () => dispatch(actions.getOfferCreator()),
     getInterview: () => dispatch(actions.getInterviewCreator()),
     addOffer: (offer) => dispatch(actions.addOfferCreator(offer)),
