@@ -13,6 +13,47 @@ export default function Navbar(props) {
     "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium";
   const currentClass =
     "border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium";
+
+  function offerClickHandler() {
+    const port = 3000;
+    const url = `http://localhost:${port}/offers/getOffers`;
+    let fetchStatus;
+    fetch(url, {
+      method: "GET",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => {
+        fetchStatus = res.status;
+        return res.json();
+      })
+      .then((response) => {
+        props.displayOffer(response);
+      });
+  }
+
+  function interviewClickHandler() {
+    const port = 3000;
+    const url = `http://localhost:${port}/interviews/getInterviews`;
+    let fetchStatus;
+    fetch(url, {
+      method: "GET",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => {
+        fetchStatus = res.status;
+        return res.json();
+      })
+      .then((response) => {
+        props.displayInterview(response);
+      });
+  }
+
   return (
     <Disclosure as="nav" className="bg-white shadow">
       {({ open }) => (
@@ -48,7 +89,7 @@ export default function Navbar(props) {
                   <a
                     href="#"
                     onClick={() => {
-                      props.displayOffer();
+                      offerClickHandler();
                     }}
                     className={
                       props.currentlyOn == "offer" ? currentClass : defaultClass
@@ -59,7 +100,7 @@ export default function Navbar(props) {
                   <a
                     href="#"
                     onClick={() => {
-                      props.displayInterview();
+                      interviewClickHandler();
                     }}
                     className={
                       props.currentlyOn == "interview"
