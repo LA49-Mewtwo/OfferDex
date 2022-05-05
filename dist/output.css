@@ -981,9 +981,9 @@ select {
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
 
-.bg-violet-100 {
+.bg-fuchsia-100 {
   --tw-bg-opacity: 1;
-  background-color: rgb(237 233 254 / var(--tw-bg-opacity));
+  background-color: rgb(250 232 255 / var(--tw-bg-opacity));
 }
 
 .bg-white {
@@ -996,9 +996,9 @@ select {
   background-color: rgb(79 70 229 / var(--tw-bg-opacity));
 }
 
-.bg-fuchsia-50 {
+.bg-violet-50 {
   --tw-bg-opacity: 1;
-  background-color: rgb(253 244 255 / var(--tw-bg-opacity));
+  background-color: rgb(245 243 255 / var(--tw-bg-opacity));
 }
 
 .bg-gray-200 {
@@ -1014,16 +1014,6 @@ select {
 .bg-indigo-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(238 242 255 / var(--tw-bg-opacity));
-}
-
-.bg-fuchsia-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(250 232 255 / var(--tw-bg-opacity));
-}
-
-.bg-violet-50 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(245 243 255 / var(--tw-bg-opacity));
 }
 
 .p-7 {
